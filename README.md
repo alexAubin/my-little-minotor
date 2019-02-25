@@ -1,16 +1,13 @@
+# My little Minotor
 
-### Dependencies
-- `python3-yaml`
-- an SMTP server running on the machine
-- currently there's a constrain on running on a yunohost server, could be easily removed
+<img src="https://storage.opensea.io/0x71c118b00759b0851785642541ceb0f4ceea0bd5/13-1550172581.png" width="200" height="200" />
 
-### Cron
+Brutally make sure that some remote services are up and running. 
 
-```cron
-*/10 * * * * some_user cd /path/to/monitoring && python3 monitor.py
-```
+Will send you an email if something's going wrong.
 
-### Yaml example
+
+### Configuration example (yaml)
 
 In `to_monitor.yml`
 
@@ -29,3 +26,15 @@ free_dns_service:
     # Will test that a specific resolver correctly resolves a specific domain
     - [ 'your.resolver.org', 'some.somain.tld', '12.34.56.78' ]
 ```
+
+### Cron
+
+```cron
+*/10 * * * * some_user cd /path/to/monitoring && python3 monitor.py
+```
+
+### Dependencies
+
+- `python3-yaml`
+- an SMTP server running on the machine
+- currently there's a constrain on running on a yunohost server, could be easily removed
